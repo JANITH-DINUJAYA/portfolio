@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-js
+
 app.use(cors({
   origin: "https://portfolio-five-omega-w823vqilsh.vercel.app/", // Replace with actual Vercel URL
   methods: ["GET", "POST"],
