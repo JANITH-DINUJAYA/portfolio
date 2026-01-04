@@ -9,7 +9,7 @@ function ProjectsSection() {
 
   useEffect(() => {
     // Fetch projects from backend
-    fetch('http://localhost:5000/api/projects')
+    fetch('https://your-backend-name.onrender.com/api/projects')
       .then(response => response.json())
       .then(data => {
         console.log('Data received:', data); // Debug log

@@ -7,7 +7,12 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+js
+app.use(cors({
+  origin: "https://portfolio-five-omega-w823vqilsh.vercel.app/", // Replace with actual Vercel URL
+  methods: ["GET", "POST"],
+}));
+
 app.use(express.json());
 
 // Serve static files (images)
