@@ -7,6 +7,14 @@ function Home() {
   return (
     <div>
       <div className="home-page">
+        {/* Background layer */}
+        <div 
+          className="home-page-bg"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/images/bgg.jpg)`
+          }}
+        />
+        
         <div className="hero-section">
           <h1>Hi, I'm Janith Dinujaya</h1>
           <p>Full Stack Developer | Building Amazing Web Applications</p>
