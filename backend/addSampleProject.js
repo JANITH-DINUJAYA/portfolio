@@ -56,8 +56,8 @@ async function addProject() {
       description: "A Portfolio Website Developed Using Mern Tech Stack",
       technologies: ["React.js","Node.js","Express.js","MongoDb"],
       image: "/images/portfolio.png",
-      githubLink: "https://github.com/JANITH-DINUJAYA/Luxe-Vista-Resort-App",
-      demoLink: "https://demo-tasks.com"
+      githubLink: "https://github.com/JANITH-DINUJAYA/portfolio",
+      demoLink: "https://www.youtube.com/embed/6SqHTJCK1jA?si=1DIpA66UOvfD8dam"
     });
 
     await project1.save();
