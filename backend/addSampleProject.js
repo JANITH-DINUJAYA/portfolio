@@ -28,7 +28,7 @@ async function addProject() {
       title: "Luxora E-Commerce Website",
       description: "A full-stack e-commerce platform with user authentication, product management Using Wordpress",
       technologies: ["Wordpress", "Mysql"],
-      image: "http://localhost:5000/images/luxora.png",
+      image: "/images/luxora.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/Luxora-E-commerce-wordpress-website",
       demoLink: "https://demo-ecommerce.com"
     });
@@ -37,7 +37,7 @@ async function addProject() {
       title: "Luxe Vista Mobile Application",
       description: "A Resort App Developed Using Java And Mysql",
       technologies: ["Java", "Mysql"],
-      image: "http://localhost:5000/images/luxe.png",
+      image: "/images/luxe.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/Luxe-Vista-Resort-App",
       demoLink: "https://demo-tasks.com"
     });
@@ -46,7 +46,7 @@ async function addProject() {
       title: "Shark Portcity Restaurant Website",
       description: "SharkPort City is a comprehensive, full-stack restaurant management web application designed to streamline food ordering, delivery, and restaurant operations. The system includes four dedicated web portals for different user roles: Customer, Driver, Admin, and Staff.",
       technologies: ["JavaScript", "PHP", "Mapbox", "OpenAI", "Payhere", "CSS", "HTML", "Firebase"],
-      image: "http://localhost:5000/images/shark.png",
+      image: "/images/shark.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/shark-port-city-restaurant-website",
       demoLink: "https://sharkportcity.com"
     });
@@ -55,7 +55,7 @@ async function addProject() {
       title: "My Portfolio",
       description: "A Portfolio Website Developed Using Mern Tech Stack",
       technologies: ["React.js","Node.js","Express.js","MongoDb"],
-      image: "http://localhost:5000/images/portfolio.png",
+      image: "/images/portfolio.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/Luxe-Vista-Resort-App",
       demoLink: "https://demo-tasks.com"
     });

@@ -97,10 +97,10 @@ function Contact() {
                 <a href="https://github.com/JANITH-DINUJAYA" target="_blank" rel="noopener noreferrer">
                   GitHub
                 </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/janith-dinujaya-7177111aa" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/JDinujaya" target="_blank" rel="noopener noreferrer">
                   Twitter
                 </a>
               </div>
