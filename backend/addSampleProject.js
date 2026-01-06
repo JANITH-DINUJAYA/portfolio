@@ -30,7 +30,7 @@ async function addProject() {
       technologies: ["Wordpress", "Mysql"],
       image: "/images/luxora.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/Luxora-E-commerce-wordpress-website",
-      demoLink: "https://demo-ecommerce.com"
+      demoLink: "https://www.youtube.com/embed/6lgXZxPSogQ?si=a-ga_35RiQA6Ovnx"
     });
 
     const project2 = new Project({
@@ -39,7 +39,7 @@ async function addProject() {
       technologies: ["Java", "Mysql"],
       image: "/images/luxe.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/Luxe-Vista-Resort-App",
-      demoLink: "https://demo-tasks.com"
+      demoLink: "https://www.youtube.com/embed/9FgDnFwwlZU?si=UXGXGMnMzKJF1yYG"
     });
 
     const project3 = new Project({
@@ -48,7 +48,7 @@ async function addProject() {
       technologies: ["JavaScript", "PHP", "Mapbox", "OpenAI", "Payhere", "CSS", "HTML", "Firebase"],
       image: "/images/shark.png",
       githubLink: "https://github.com/JANITH-DINUJAYA/shark-port-city-restaurant-website",
-      demoLink: "https://sharkportcity.com"
+      demoLink: "https://www.youtube.com/embed/OG-dz-tbX3s?si=Sts40ClcZuT4C-AA"
     });
      
     const project4 = new Project({
