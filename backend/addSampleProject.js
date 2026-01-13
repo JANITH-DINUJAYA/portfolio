@@ -59,11 +59,20 @@ async function addProject() {
       githubLink: "https://github.com/JANITH-DINUJAYA/portfolio",
       demoLink: "https://www.youtube.com/embed/6SqHTJCK1jA?si=1DIpA66UOvfD8dam"
     });
+     const project5 = new Project({
+      title: "Edu Learn Learning Management System",
+      description: "A learning management System Developed Using Laravel And mysql",
+      technologies: ["Laravel","Mysql"],
+      image: "/images/edulearn.png",
+      githubLink: "https://github.com/JANITH-DINUJAYA/edulearn",
+      demoLink: "https://www.youtube.com/embed/9F5Ev0YhoaE?si=clvZkjvXloL_qSqQ"
+    });
 
     await project1.save();
     await project2.save();
     await project3.save();
     await project4.save();
+    await project5.save();
 
     console.log('✅ Sample projects added successfully!');
     process.exit(0);
