@@ -1,0 +1,102 @@
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  /* modern soft gradient */
+  background: radial-gradient(circle at top, #1b2a4a 0%, #0b1220 60%, #05070d 100%);
+
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* subtle animated glow background */
+.splash-screen::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(74, 158, 255, 0.15);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: floatGlow 6s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(-40px) scale(1); }
+  50% { transform: translateY(40px) scale(1.1); }
+  100% { transform: translateY(-40px) scale(1); }
+}
+
+/* TITLE */
+.splash-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+
+  background: linear-gradient(90deg, #4a9eff, #7c3aed, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: titleReveal 1.2s ease forwards;
+}
+
+/* SUBTITLE */
+.splash-sub {
+  font-size: 1.1rem;
+  opacity: 0.75;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+
+  animation: subtitleReveal 1.5s ease forwards;
+}
+
+/* ENTER ANIMATION */
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes subtitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 0.75;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* EXIT ANIMATION (smooth premium slide + fade) */
+.slide-out {
+  animation: exitSmooth 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes exitSmooth {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.98);
+    filter: blur(8px);
+  }
+}
