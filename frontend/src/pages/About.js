@@ -89,9 +89,14 @@ function About() {
             <div className="education-item">
               <div className="education-dot" />
               <div>
-                <h3>Your Degree</h3>
-                <p className="education-school">Your University</p>
-                <p className="education-year">2020 – 2024</p>
+                <h3>Data Science</h3>
+                <p className="education-school">Carddiff Metropolitan University</p>
+                <p className="education-year">2026 – now</p>
+              </div>
+               <div>
+                <h3>HND in Software engineering</h3>
+                <p className="education-school">Carddiff Metropolitan University</p>
+                <p className="education-year">2024 – 2025</p>
               </div>
             </div>
           </section>
