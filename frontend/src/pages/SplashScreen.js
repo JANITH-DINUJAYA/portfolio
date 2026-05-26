@@ -5,23 +5,24 @@ function SplashScreen({ onFinish }) {
   const [exit, setExit] = useState(false);
 
   useEffect(() => {
-    // show splash for 2.5 seconds then animate out
     const timer = setTimeout(() => {
       setExit(true);
-
-      // after animation complete, remove splash
-      setTimeout(() => {
-        onFinish();
-      }, 800);
-    }, 2500);
+      setTimeout(() => onFinish(), 800);
+    }, 2600);
 
     return () => clearTimeout(timer);
   }, [onFinish]);
 
   return (
     <div className={`splash-screen ${exit ? "slide-out" : ""}`}>
-      <h1 className="splash-title">Welcome to My Portfolio</h1>
-      <p className="splash-sub">Building Modern Web Experiences</p>
+      {/* Loading bar */}
+      <div className="splash-loader" />
+
+      {/* Logo mark */}
+      <div className="splash-logo-mark">JD</div>
+
+      <h1 className="splash-title">Janith Dinujaya</h1>
+      <p className="splash-sub">Full Stack Developer</p>
     </div>
   );
 }

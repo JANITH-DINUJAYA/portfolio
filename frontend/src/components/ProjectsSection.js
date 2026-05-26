@@ -4,27 +4,18 @@ import './ProjectsSection.css';
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [loading, setLoading]   = useState(true);
+  const [error, setError]       = useState(null);
 
   useEffect(() => {
-    // Fetch projects from backend
     fetch('https://portfolio-8mr7.onrender.com/api/projects')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
-        console.log('Data received:', data); // Debug log
-        // Make sure data is an array
-        if (Array.isArray(data)) {
-          setProjects(data);
-        } else {
-          console.error('Data is not an array:', data);
-          setProjects([]);
-        }
+        setProjects(Array.isArray(data) ? data : []);
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching projects:', error);
-        setError(error.message);
+      .catch(err => {
+        setError(err.message);
         setLoading(false);
       });
   }, []);
@@ -33,29 +24,39 @@ function ProjectsSection() {
     return (
       <section id="projects" className="projects-section">
         <div className="projects-container">
-          <h2 className="section-title">Loading Projects...</h2>
+          <div className="section-heading">
+            <span className="section-label">Portfolio</span>
+            <h2 className="section-title">My Projects</h2>
+            <p className="section-subtitle">Here are some of my recent works</p>
+          </div>
+          <div className="projects-loading">
+            {[1, 2, 3].map(i => (
+              <div className="skeleton-card" key={i}>
+                <div className="skeleton-img" />
+                <div className="skeleton-body">
+                  <div className="skeleton-line short" />
+                  <div className="skeleton-line med" />
+                  <div className="skeleton-line" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
   }
 
-  if (error) {
+  if (error || projects.length === 0) {
     return (
       <section id="projects" className="projects-section">
         <div className="projects-container">
-          <h2 className="section-title">Error loading projects</h2>
-          <p>{error}</p>
-        </div>
-      </section>
-    );
-  }
-
-  if (projects.length === 0) {
-    return (
-      <section id="projects" className="projects-section">
-        <div className="projects-container">
-          <h2 className="section-title">No Projects Found</h2>
-          <p className="section-subtitle">Add some projects to your database!</p>
+          <div className="section-heading">
+            <span className="section-label">Portfolio</span>
+            <h2 className="section-title">{error ? 'Error loading projects' : 'No Projects Found'}</h2>
+            <p className="section-subtitle">
+              {error ? error : 'Add some projects to your database!'}
+            </p>
+          </div>
         </div>
       </section>
     );
@@ -64,8 +65,11 @@ function ProjectsSection() {
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
-        <h2 className="section-title">My Projects</h2>
-        <p className="section-subtitle">Here are some of my recent works</p>
+        <div className="section-heading">
+          <span className="section-label">Portfolio</span>
+          <h2 className="section-title">My Projects</h2>
+          <p className="section-subtitle">Here are some of my recent works</p>
+        </div>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <ProjectCard key={project._id || index} project={project} />

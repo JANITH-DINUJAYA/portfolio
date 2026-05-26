@@ -14,10 +14,7 @@ function Contact() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -25,16 +22,15 @@ function Contact() {
     setIsLoading(true);
     setStatus('');
 
-    // Replace these with your actual EmailJS credentials
-    const SERVICE_ID = 'service_lxt7hsa';
+    const SERVICE_ID  = 'service_lxt7hsa';
     const TEMPLATE_ID = 'template_a7l9w0e';
-    const PUBLIC_KEY = 'I75jCFcn87Ac8TltV';
+    const PUBLIC_KEY  = 'I75jCFcn87Ac8TltV';
 
     const templateParams = {
-      from_name: formData.name,
+      from_name:  formData.name,
       from_email: formData.email,
-      subject: formData.subject,
-      message: formData.message
+      subject:    formData.subject,
+      message:    formData.message
     };
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
@@ -43,10 +39,7 @@ function Contact() {
         setStatus('✅ Message sent successfully! I will get back to you soon.');
         setFormData({ name: '', email: '', subject: '', message: '' });
         setIsLoading(false);
-        
-        setTimeout(() => {
-          setStatus('');
-        }, 5000);
+        setTimeout(() => setStatus(''), 5000);
       })
       .catch((error) => {
         console.error('FAILED...', error);
@@ -58,15 +51,21 @@ function Contact() {
   return (
     <div className="contact-page">
       <div className="contact-container">
+
+        {/* ── Header ─────────────────────────────────────── */}
         <div className="contact-header">
+          <span className="section-label">Contact</span>
           <h1>Get In Touch</h1>
-          <p>Have a question or want to work together? Feel free to reach out!</p>
+          <p>Have a question or want to work together? Feel free to reach out — I'd love to hear from you.</p>
         </div>
 
+        {/* ── Content ────────────────────────────────────── */}
         <div className="contact-content">
+
+          {/* Info panel */}
           <div className="contact-info">
-            <h2>Contact Information</h2>
-            
+            <p className="contact-info-title">Contact Details</p>
+
             <div className="info-item">
               <div className="info-icon">📧</div>
               <div className="info-details">
@@ -107,35 +106,37 @@ function Contact() {
             </div>
           </div>
 
+          {/* Contact form */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <h2>Send Me a Message</h2>
-            
-            <div className="form-group">
-              <label htmlFor="name">Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Your Name"
-                disabled={isLoading}
-              />
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="your.email@example.com"
-                disabled={isLoading}
-              />
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                  disabled={isLoading}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your@email.com"
+                  disabled={isLoading}
+                />
+              </div>
             </div>
 
             <div className="form-group">
@@ -163,11 +164,11 @@ function Contact() {
                 rows="6"
                 placeholder="Your message here..."
                 disabled={isLoading}
-              ></textarea>
+              />
             </div>
 
             <button type="submit" className="submit-btn" disabled={isLoading}>
-              {isLoading ? 'Sending...' : 'Send Message'}
+              {isLoading ? 'Sending…' : 'Send Message →'}
             </button>
 
             {status && <p className="status-message">{status}</p>}

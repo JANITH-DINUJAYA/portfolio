@@ -5,40 +5,57 @@ function About() {
   return (
     <div className="about-page">
       <div className="about-container">
+
+        {/* ── Header ─────────────────────────────────────── */}
         <div className="about-header">
-          <img
-  src="/images/img.jpeg"
-  alt="Profile"
-  className="profile-image"
-/>
+          <div className="profile-image-wrapper">
+            <div className="profile-image-glow" />
+            <img
+              src="/images/img.jpeg"
+              alt="Janith Dinujaya"
+              className="profile-image"
+            />
+          </div>
           <div className="about-intro">
-            <h1>About Me</h1>
-            <p className="about-tagline">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+            <h1>Janith Dinujaya</h1>
+            <p className="about-tagline">Full Stack Developer · Problem Solver · Tech Enthusiast</p>
           </div>
         </div>
 
+        {/* ── Content ────────────────────────────────────── */}
         <div className="about-content">
+
+          {/* About Me */}
           <section className="about-section">
-            <h2>👋 Hello!</h2>
+            <div className="about-section-header">
+              <div className="about-section-icon">👋</div>
+              <h2>Hello!</h2>
+            </div>
             <p>
-              I'm a passionate Full Stack Developer with expertise in building modern web applications. 
-              I love turning ideas into reality through clean, efficient code and beautiful user interfaces.
+              I'm a passionate Full Stack Developer with expertise in building modern web
+              applications. I love turning ideas into reality through clean, efficient code
+              and beautiful user interfaces.
             </p>
             <p>
-              With a strong foundation in both frontend and backend technologies, I create end-to-end 
-              solutions that are not only functional but also provide exceptional user experiences.
+              With a strong foundation in both frontend and backend technologies, I create
+              end-to-end solutions that are not only functional but also provide exceptional
+              user experiences.
             </p>
           </section>
 
+          {/* Skills */}
           <section className="about-section">
-            <h2>💼 Skills</h2>
+            <div className="about-section-header">
+              <div className="about-section-icon">💼</div>
+              <h2>Skills</h2>
+            </div>
             <div className="skills-grid">
               <div className="skill-category">
                 <h3>Frontend</h3>
                 <div className="skill-tags">
                   <span>React</span>
                   <span>JavaScript</span>
-                  <span>HTML/CSS</span>
+                  <span>HTML / CSS</span>
                   <span>Tailwind CSS</span>
                 </div>
               </div>
@@ -52,7 +69,7 @@ function About() {
                 </div>
               </div>
               <div className="skill-category">
-                <h3>Tools & Others</h3>
+                <h3>Tools</h3>
                 <div className="skill-tags">
                   <span>Git</span>
                   <span>VS Code</span>
@@ -63,17 +80,28 @@ function About() {
             </div>
           </section>
 
+          {/* Education */}
           <section className="about-section">
-            <h2>🎓 Education</h2>
+            <div className="about-section-header">
+              <div className="about-section-icon">🎓</div>
+              <h2>Education</h2>
+            </div>
             <div className="education-item">
-              <h3>Your Degree</h3>
-              <p className="education-school">Your University</p>
-              <p className="education-year">2020 - 2024</p>
+              <div className="education-dot" />
+              <div>
+                <h3>Your Degree</h3>
+                <p className="education-school">Your University</p>
+                <p className="education-year">2020 – 2024</p>
+              </div>
             </div>
           </section>
 
+          {/* Interests */}
           <section className="about-section">
-            <h2>🎯 Interests</h2>
+            <div className="about-section-header">
+              <div className="about-section-icon">🎯</div>
+              <h2>Interests</h2>
+            </div>
             <div className="interests-grid">
               <div className="interest-item">💻 Coding</div>
               <div className="interest-item">🎮 Gaming</div>
@@ -81,6 +109,7 @@ function About() {
               <div className="interest-item">🎵 Music</div>
             </div>
           </section>
+
         </div>
       </div>
     </div>
